@@ -1,0 +1,42 @@
+core/__pycache__
+venv/
+/*.pyc
+__pycache__
+.env/
+
+# ─── Python / Django ───
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+db.sqlite3
+media/
+staticfiles/
+
+# ─── Node / React ───
+node_modules/
+dist/
+build/
+.eslintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ─── Docker ───
+.dockerignore
+data/
+
+# ─── IDEs / System ───
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.bak
+
+# ─── Environment Secrets (CRITICAL) ───
+.env
+.env.local
+.env.production
