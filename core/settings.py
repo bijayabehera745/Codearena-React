@@ -167,10 +167,10 @@ CELERY_REDIS_BACKEND_TRANSPORT_OPTIONS = {
 }
 
 CORS_ALLOW_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "codearena.ninja",
-    "www.codearena.ninja",
+    "https://localhost:5173",
+    "https://127.0.0.1:5173",
+    "https://codearena.ninja",
+    "https://www.codearena.ninja",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
