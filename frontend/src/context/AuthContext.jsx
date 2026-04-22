@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 
-const API = 'http://localhost:8080/api';
+const API = 'https://codearena.ninja/api';
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {

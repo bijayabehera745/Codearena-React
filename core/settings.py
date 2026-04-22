@@ -33,7 +33,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost').split(',')
 
 
 # Application definition
@@ -168,6 +168,8 @@ CELERY_REDIS_BACKEND_TRANSPORT_OPTIONS = {
 CORS_ALLOW_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "codearena.ninja",
+    "www.codearena.ninja",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
