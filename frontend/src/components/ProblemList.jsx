@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useAuth, API } from '../context/AuthContext';
 import AuthModal from './AuthModal';
+import CodeArenaLogo from '../../public/Logo';
 
 const diffLabel = { E: 'Easy', M: 'Medium', H: 'Hard' };
 const diffClass = { E: 'badge-easy', M: 'badge-medium', H: 'badge-hard' };
@@ -8,7 +9,7 @@ const COMMON_COMPANIES = ["Google", "Amazon", "Microsoft", "Facebook", "Apple", 
 
 export default function ProblemList({ onSelect }) {
   const { user, logout, loading: authLoading } = useAuth();
-  
+
   // Data State
   const [problems, setProblems] = useState([]);
   const [page, setPage] = useState(1);
@@ -87,8 +88,10 @@ export default function ProblemList({ onSelect }) {
         height: 56, position: 'sticky', top: 0, zIndex: 100,
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <div style={{ width: 28, height: 28, background: 'var(--accent)', borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, fontWeight: 800, color: '#fff' }}>C</div>
-          <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 16 }}>CodeArena</span>
+          <CodeArenaLogo size={32} />
+          <span style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: 18 }}>
+            CodeArena
+          </span>
         </div>
 
         {!authLoading && (
@@ -146,18 +149,18 @@ export default function ProblemList({ onSelect }) {
           {problems.map((p, i) => {
             const isLast = problems.length === i + 1;
             return (
-              <div 
+              <div
                 key={`${p.id}-${i}`}
                 ref={isLast ? lastElementRef : null}
                 className="problem-card"
                 onClick={() => onSelect(p)}
-                style={{ 
-                  display: 'grid', 
-                  gridTemplateColumns: '1fr auto', 
-                  padding: '20px', 
-                  background: 'var(--bg-surface)', 
-                  border: '1px solid var(--border)', 
-                  borderRadius: 'var(--radius-lg)', 
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr auto',
+                  padding: '20px',
+                  background: 'var(--bg-surface)',
+                  border: '1px solid var(--border)',
+                  borderRadius: 'var(--radius-lg)',
                   cursor: 'pointer'
                 }}
               >
